@@ -1,28 +1,48 @@
-function outfits(input){
+function summerOutfit(input){
     let degrees = Number(input[0]);
-    let time = input(1);
-    switch(time){
-        case "Morning":if(degrees >= 10 && degrees <= 18){console.log (`It's ${degrees} degrees, get your Sweatshirt and Sneakers.`)}
-        else if(degrees > 18 && degrees <= 24){console.log(`It's ${degrees} degrees, get your Shirt and Moccasins.`)}
-        else if(degrees >= 25){console.log(`It's ${degrees} degrees, get your T-shirt and Sandals.`)};break;
+    let time = (input[1]);
+    let outfit;
+    let shoes;
+    if (degrees >= 10 && degrees <=18){
+        if(time === "Morning"){
+            shoes = "Sneakers";
+            outfit = "Sweatshirt";
+            console.log(`It's ${degrees} degrees, get your ${outfit} and ${shoes}.`)}
 
-        case "Afternoon": if (degrees >= 10 && degrees <= 24){console.log (`It's ${degrees} degrees, get your Shirt and Moccasins.`)}
-        else if(degrees > 18 && degrees <= 24){console.log(`It's ${degrees} degrees, get your T-shirt and Sandals.`)}
-        else if(degrees >= 25){console.log(`It's ${degrees} degrees, get your Swim Suit and Barefoot`)};break;
-
-        case "Evening": if (degrees >= 10 && degrees <= 24){console.log (`It's ${degrees} degrees, get your Shirt and Moccasins.`)}
-        else if (degrees >= 10 && degrees <= 24){console.log (`It's ${degrees} degrees, get your Shirt and Moccasins.`)}
-        else if (degrees >= 25){console.log (`It's ${degrees} degrees, get your Shirt and Moccasins.`)}
+          else if (time === "Afternoon" || time === "Evening") {
+            shoes = "Moccasins";
+            outfit = "Shirt";
+            console.log(`It's ${degrees} degrees, get your ${outfit} and ${shoes}.`)
+          } 
+        }
+        else if (degrees > 18 && degrees <=24){
+            if (time === "Afternoon"){
+                shoes = "Sandals";
+                outfit = "T-Shirt";
+                console.log(`It's ${degrees} degrees, get your ${outfit} and ${shoes}.`)
+            }
+            else if (time === "Morning" || time === "Evening"){
+                shoes = "Moccasins";
+                outfit = "Shirt";
+                console.log(`It's ${degrees} degrees, get your ${outfit} and ${shoes}.`)
+            }
+        }
+        else if (degrees >= 25){
+            if (time === "Morning"){
+                shoes = "Sandals";
+                outfit = "T-Shirt";
+                console.log(`It's ${degrees} degrees, get your ${outfit} and ${shoes}.`)
+            }
+            else if (time === "Afternoon"){
+                shoes = "Barefoot";
+                outfit = "Swim Suit";
+                console.log(`It's ${degrees} degrees, get your ${outfit} and ${shoes}.`)
+            }
+            else if (time === "Evening"){
+                shoes = "Moccasins";
+                outfit = "Shirt";
+                console.log(`It's ${degrees} degrees, get your ${outfit} and ${shoes}.`)
+            }
+        }
     }
-
-
-
-
-
-
-
-
-}
-outfits (["16", "Morning"])
-//"It's {градуси} degrees, get your {облекло} and {обувки}."
-//10 <= градуси <= 18 Outfit = Sweatshirt Shoes = Sneakers Outfit = Shirt Shoes = Moccasins Outfit = Shirt Shoes = Moccasins
+    summerOutfit(["20","Afternoon"])
